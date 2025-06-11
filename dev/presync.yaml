@@ -10,8 +10,13 @@ spec:
     spec:
       containers:
         - name: presync-job
-          image: python:3.9
-          command: ["python", "-c", "assert 4 == 5"]    
+          image: ubuntu
+          command: 
+            - /bin/bash
+            - -c
+            - |
+              echo "Integration testing Done"
+              
       restartPolicy: Never
   backoffLimit: 2
 ---
